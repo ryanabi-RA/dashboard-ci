@@ -12,7 +12,7 @@ class Pegawai extends CI_Controller
 		$data['titleNav'] = "Data Pegawai";
 		$data['pegawai'] = $this->db->get('pegawai')->result_array();
 
-		$config['base_url'] = 'http://localhost/dashboard-ci3/pegawai/index';
+		$config['base_url'] = 'http://localhost/dashboard-ci-tailwind/pegawai/index';
 		$config['total_rows'] = $this->db->get('pegawai')->num_rows();
 		$config['per_page'] = 6;
 

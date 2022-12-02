@@ -17,5 +17,5 @@
         }
     </style>
 </head>
-<body class="m-0 p-4 w-full h-screen box-border flex bg-gray-100">
+<body class="m-0 p-4 w-full h-screen box-border flex bg-gray-100 dark:bg-slate-900">
     

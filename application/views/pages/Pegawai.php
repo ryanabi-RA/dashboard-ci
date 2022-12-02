@@ -7,7 +7,7 @@
         </button>
         
     </div>
-    <table class="my-4 w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-2xl overflow-hidden">
+    <table class="my-4 w-full text-sm text-left text-gray-500 rounded-xl overflow-hidden">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
@@ -34,7 +34,7 @@
         <?php $start++;
         foreach ($pegawai as $pegawai) : ?>
             <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 hover:dark:bg-gray-900">
                     <th scope="row" class="py-4 px-6 w-10 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <?= $start++; ?>
                     </th>
@@ -51,13 +51,10 @@
                         <?= $pegawai['alamat']; ?>
                     </td>
                     <td class="w-12">
-                        <?= anchor('pegawai/detail/' . $pegawai['id_pegawai'], '<i class="text-green-500 text-[24px] hover:text-green-900 fa-solid fa-search"></i>'); ?>
+                        <?= anchor('pegawai/detail/' . $pegawai['id_pegawai'], '<i class="text-green-500 dark:text-gray-400 hover:dark:text-gray-400 text-[24px] hover:text-green-900 fa-solid fa-arrow-up-right-from-square"></i>'); ?>
                     </td>
-                    <!-- <td class="w-12">
-                        <?= anchor('pegawai/edit/' . $pegawai['id_pegawai'], '<i class="text-yellow-500 text-[24px] hover:text-yellow-900 fa-solid fa-pencil"></i>'); ?>
-                    </td> -->
                     <td class="w-12" onclick="javascript: return confirm('anda yakin hapus')">
-                        <?= anchor('pegawai/hapus/' . $pegawai['id_pegawai'], '<i class="text-red-500 text-[24px] hover:text-red-900 fa-solid fa-trash"></i>') ?>
+                        <?= anchor('pegawai/hapus/' . $pegawai['id_pegawai'], '<i class="text-red-500 dark:text-red-800 hover:dark:text-red-500 text-[24px] hover:text-red-900 fa-solid fa-trash"></i>') ?>
                     </td>
                 </tr>
             </tbody>
