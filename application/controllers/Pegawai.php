@@ -6,11 +6,11 @@ class Pegawai extends CI_Controller
 
 	public function index()
 	{
-		$this->load->library('pagination');
-
 		$data['title'] = "Pegawai";
 		$data['titleNav'] = "Data Pegawai";
-		$data['pegawai'] = $this->db->get('pegawai')->result_array();
+		$data['pegawai'] = $this->db->get('pegawai')->result();
+
+		$this->load->library('pagination');
 
 		$config['base_url'] = 'http://localhost/dashboard-ci-tailwind/pegawai/index';
 		$config['total_rows'] = $this->db->get('pegawai')->num_rows();
@@ -50,7 +50,10 @@ class Pegawai extends CI_Controller
 
 		$data['start'] = $this->uri->segment(3);
 
-		$data['pegawai'] = $this->db->get('pegawai', $config['per_page'], $data['start'])->result_array();
+		$data['pegawai'] = $this->db->get('pegawai')->result();
+		$data['pegawai'] = $this->db->get('pegawai', $config['per_page'], $data['start'])->result();
+
+		$data['pagination'] = $this->pagination->create_links();
 
 		$this->load->view('templates/Header', $data);
 		$this->load->view('templates/Sidebar');
@@ -123,48 +126,6 @@ class Pegawai extends CI_Controller
 		$this->load->view('templates/Footer');
 	}
 
-
-	// public function update()
-	// {
-	// 	$id_pegawai = $this->input->post('id_pegawai');
-	// 	$nip = $this->input->post('nip');
-	// 	$nama = $this->input->post('nama');
-	// 	$alamat = $this->input->post('alamat');
-	// 	$tgl_lahir = $this->input->post('tgl_lahir');
-	// 	$no_telp = $this->input->post('no_telp');
-	// 	// $foto = $_FILES['foto'];
-
-	// 	// if ($foto = '') {
-	// 	// 	# code...
-	// 	// } else {
-	// 	// 	$config['upload_path'] = './assets/foto';
-	// 	// 	$config['allowed_types'] = 'jpg|png|gif|jpeg';
-
-	// 	// 	$this->load->library('upload');
-	// 	// 	$this->upload->initialize($config);
-	// 	// 	if (!$this->upload->do_upload('foto')) {
-	// 	// 		echo "Upload Gagal";
-	// 	// 		die;
-	// 	// 	} else {
-	// 	// 		$foto = $this->upload->data('file_name');
-	// 	// 	}
-	// 	// }
-
-	// 	$data = array(
-	// 		'nip' => $nip,
-	// 		'nama' => $nama,
-	// 		'alamat' => $alamat,
-	// 		'tgl_lahir' => $tgl_lahir,
-	// 		'no_telp' => $no_telp,
-	// 		// 'foto' => $foto,
-	// 	);
-
-	// 	// $where = array('id_pegawai' => $id_pegawai);
-	// 	$this->db->update('pegawai', $data);
-	// 	$this->db->where('1001014');
-	// 	redirect('pegawai');
-	// }
-
 	public function update()
 	{
 		$id_pegawai = $this->input->post('id_pegawai');
@@ -200,8 +161,8 @@ class Pegawai extends CI_Controller
 
 		$where = array('id_pegawai' => $id_pegawai);
 
-        $this->db->where($where);
-        $this->db->update('pegawai', $data);
+		$this->db->where($where);
+		$this->db->update('pegawai', $data);
 		// $this->m_mahasiswa->update_data($where, $data, 'tb_mahasiswa');
 		redirect('pegawai/index');
 	}
@@ -211,5 +172,24 @@ class Pegawai extends CI_Controller
 		$this->db->where(array('id_pegawai' => $id_pegawai));
 		$this->db->delete('pegawai');
 		redirect('pegawai');
+	}
+
+	public function search()
+	{
+		$data['title'] = "Pencarian Data Pegawai";
+		$data['titleNav'] = "Data Pegawai";
+		$this->load->library('pagination');
+
+		$keyword = $this->input->post('keyword');
+		$data['pegawai'] = $this->m_pegawai->get_keyword($keyword);
+		$data['start'] = $this->uri->segment(4);
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$this->load->view('templates/Header', $data);
+		$this->load->view('templates/Sidebar');
+		$this->load->view('templates/Navbar', $data);
+		$this->load->view('pages/pegawai', $data);
+		$this->load->view('templates/Footer');
 	}
 }

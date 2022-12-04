@@ -1,8 +1,7 @@
 <!-- Pegawai Page -->
 <div class="grow m-0 py-2 md:py-4 w-full" id="content">
-
+    <!-- Modal toggle -->
     <div class="container-content">
-        <!-- Modal toggle -->
         <div class="container-button">
             <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="authentication-modal">
                 Tambah
@@ -111,18 +110,5 @@
                 </tbody>
             <?php endforeach; ?>
         </table>
-        <div class="w-full flex justify-center">
-            <?php
-                //trigger exception in a "try" block
-                try {
-                    echo $this->pagination->create_links();
-                }
-
-                //catch exception
-                catch (Exception $e) {
-                    echo 'Message: ' . $e->getMessage();
-                }
-            ?>
-        </div>
     </div>
 </div>
