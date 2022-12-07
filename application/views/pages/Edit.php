@@ -2,7 +2,7 @@
 <div class="grow m-0 py-4 w-full flex flex-wrap" id="content">
     <div class="p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md">
         <?php echo form_open_multipart('pegawai/update/'); ?>
-        <div class="mt-4 flex flex-col lg:flex-row max-w-3xl items-center lg:items-start">
+        <div class="flex flex-col lg:flex-row max-w-3xl items-center lg:items-start">
             <img src="<?= base_url('assets/foto/') . $pegawai->foto; ?>" alt="" class="mb-6 lg:mb-0 w-fit sm:max-w-sm border-2 border-gray-600 rounded-xl bg-cover">
             <!-- </div> -->
             <table class="items-center ml-0 lg:ml-6 w-full">

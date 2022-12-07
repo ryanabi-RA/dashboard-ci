@@ -1,10 +1,10 @@
 <!-- Content -->
 <div class="grow m-0 py-4 w-full flex flex-wrap" id="content">
-  <div class="p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md">
-    <div class="flex flex-col lg:flex-row max-w-3xl">
-            <!-- <div class="h-64 w-30 bg-red-100"> -->
-            <img src="<?= base_url('assets/foto/default.png'); ?>" alt="" class="mb-6 lg:mb-0 w-fit sm:max-w-sm border-2 border-gray-600 rounded-xl bg-cover">
-            <!-- </div> -->
+    <div class="p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md">
+        <div class="flex flex-col lg:flex-row max-w-3xl">
+            <div class="flex justify-center lg:justify-start">
+                <img src="<?= base_url('assets/foto/default.png'); ?>" alt="" class="mb-6 lg:mb-0 w-fit sm:max-w-sm border-2 border-gray-600 rounded-xl bg-cover">
+            </div>
             <table class="mx-6 w-full">
                 <tr>
                     <td class="text-md font-medium text-black dark:text-gray-500">Nama</td>
