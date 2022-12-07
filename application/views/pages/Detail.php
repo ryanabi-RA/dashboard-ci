@@ -56,7 +56,7 @@
   <div class="p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md flex">
     <div class="m-auto lg:m-0">
       <div class="flex flex-col lg:flex-row">
-        <img src="<?= base_url('assets/foto/') . $pegawai->foto; ?>" alt="" class="mb-6 md:max-w-smlg:mb-0 border-2 border-gray-600 rounded-xl bg-cover">
+        <img src="<?= base_url('assets/foto/') . $pegawai->foto; ?>" alt="" class="mb-6 md:max-w-sm lg:mb-0 border-2 border-gray-600 rounded-xl bg-cover">
         <!-- </div> -->
         <table class="items-center ml-0 lg:ml-6 w-full">
           <tr>
