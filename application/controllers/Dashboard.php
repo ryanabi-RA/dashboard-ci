@@ -1,10 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends CI_Controller
+{
 
 	public function index()
 	{
+		$connected = @fsockopen("www.tailwindcss.com", 80);	//website, port  (try 80 or 443)
+		if (!$connected) {
+			redirect('offline');  //action when connected
+		}
+		
 		$data['title'] = "Dashboard";
 		$data['titleNav'] = "Dashboard";
 		$data['jumlahPegawai'] = $this->db->get('pegawai')->num_rows();

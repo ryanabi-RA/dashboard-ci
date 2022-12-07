@@ -163,8 +163,8 @@ class Pegawai extends CI_Controller
 
 		$this->db->where($where);
 		$this->db->update('pegawai', $data);
-		// $this->m_mahasiswa->update_data($where, $data, 'tb_mahasiswa');
-		redirect('pegawai/index');
+		// $this->m_pegawai->update_data($where, $data, 'pegawai');
+		redirect('pegawai');
 	}
 
 	public function hapus($id_pegawai)
@@ -191,5 +191,85 @@ class Pegawai extends CI_Controller
 		$this->load->view('templates/Navbar', $data);
 		$this->load->view('pages/pegawai', $data);
 		$this->load->view('templates/Footer');
+	}
+
+	public function print()
+	{
+		$data['title'] = "Pencarian Data Pegawai";
+		$data['titleNav'] = "Data Pegawai";
+
+		$data['pegawai'] = $this->db->get('pegawai')->result();
+		$this->load->view('templates/Header', $data);
+		$this->load->view('pages/print_pegawai', $data);
+	}
+
+	public function pdf1()
+	{
+		$this->load->library('Pdf'); //MEMANGGIL LIBRARY YANG KITA BUAT TADI
+		error_reporting(0); // AGAR ERROR MASALAH PHP TIDAK MUNCUL
+		$pdf = new FPDF('P', 'mm', 'Letter');
+		$pdf->AddPage();
+		$pdf->SetFont('Arial', 'B', 16);
+		$pdf->Cell(0, 7, 'Daftar pegawai', 0, 1, 'C');
+		$pdf->Cell(10, 7, '', 0, 1);
+		$pdf->SetFont('Arial', 'B', 10);
+		$pdf->Cell(10, 10, 'No', 1, 0, 'C');
+		$pdf->Cell(60, 10, 'Nama pegawai', 1, 0, 'C');
+		$pdf->Cell(30, 10, 'NIP', 1, 0, 'C');
+		$pdf->Cell(50, 10, 'Tanggal Lahir', 1, 0, 'C');
+		$pdf->Cell(50, 10, 'Alamat', 1, 1, 'C');
+		$pdf->SetFont('Arial', '', 10);
+
+		$pegawai = $this->db->get('pegawai')->result();
+		$no = 0;
+		foreach ($pegawai as $data) {
+			$no++;
+			$pdf->Cell(10, 10, $no, 1, 0, 'C');
+			$pdf->Cell(60, 10, $data->nama, 1, 0);
+			$pdf->Cell(30, 10, $data->nip, 1, 0);
+			$pdf->Cell(50, 10, $data->tgl_lahir, 1, 0);
+			$pdf->Cell(50, 10, $data->alamat, 1, 1);
+		}
+		$pdf->Output();
+	}
+
+	public function exportExcel()
+	{
+		$data = $this->db->get('pegawai')->result_array();
+		// $data = $this->db->get('pegawai')->result();
+
+		include_once APPPATH . '/third_party/excel/xlsxwriter.class.php';
+		ini_set('display_error', 0);
+		ini_set('log_errors', 1);
+		error_reporting(E_ALL & ~E_NOTICE);
+
+		$filename = "report-" . date('d-m-Y-H-i-s') . ".xlsx";
+		header('Content-disposition: attachment; filename="' . XLSXWriter::sanitize_filename($filename) . '"');
+		header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+		header('Content-Transfer-Encoding: binary');
+		header("Cache-Control: must-revalidate");
+		header('Pragma: public');
+
+		$styles = array('widths' => [3, 20, 30, 40], 'font' => 'Arial', 'fonrsize' => 10, 'font-style' => 'bold', 'fill' => '#fff', 'haling' => 'center', 'border' => 'left,right,top,bottom');
+		$styles2 = array(['font' => 'Arial', 'font-size' => 10, 'font-style' => 'bold', 'fill' => '#000', 'haling' => 'left', 'border' => 'left,right,top,bottom', 'fill' => '#ffc'], ['fill' => '#fcf'], ['fill' => '#ccf'], ['fill' => 'cff'], ['fill' => '#cff'], ['fill' => '#cff'],);
+
+		$header = array(
+			'No' => 'integer',
+			'Nama pegawai' => 'string',
+			'NIP' => 'string',
+			'Tanggal Lahir' => 'string',
+			'Alamat' => 'string',
+		);
+
+		$writer = new XLSXWriter();
+		$writer->setAuthor("RA");
+
+		$writer->writeSheetHeader('Sheet1', $header, $styles);
+		$no = 1;
+		foreach ($data as $row) {
+			$writer->writeSheetRow('Sheet1', [$no, $row['nama'], $row['nip'], $row['tgl_lahir'], $row['alamat']], $styles2);
+			$no++;
+		}
+		$writer->writeToStdOut();
 	}
 }
