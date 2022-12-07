@@ -7,32 +7,32 @@
             </div>
             <table class="mx-6 w-full">
                 <tr>
-                    <td class="text-md font-medium text-black dark:text-gray-500">Nama</td>
-                    <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-32">Nama</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-4">:</td>
                     <td class="text-md font-medium text-black dark:text-gray-400">Ryan Abi Nugraha</td>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-md font-medium text-black dark:text-gray-500">NIP</td>
-                    <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-32">NIP</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-4">:</td>
                     <td class="text-md font-medium text-black dark:text-gray-400">41520010019</td>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-md font-medium text-black dark:text-gray-500">Tanggal Lahir</td>
-                    <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-32">Tanggal Lahir</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-4">:</td>
                     <td class="text-md font-medium text-black dark:text-gray-400">15 April 2002</td>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-md font-medium text-black dark:text-gray-500">Alamat</td>
-                    <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-32">Alamat</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-4">:</td>
                     <td class="text-md font-medium text-black dark:text-gray-400">Jl. Daan Mogot</td>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-md font-medium text-black dark:text-gray-500">No Telepon</td>
-                    <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-32">No Telepon</td>
+                    <td class="text-md font-medium text-black dark:text-gray-500 md:w-4">:</td>
                     <td class="text-md font-medium text-black dark:text-gray-400">+62 85216277029</td>
                     </td>
                 </tr>
