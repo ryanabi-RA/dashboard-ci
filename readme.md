@@ -1,6 +1,6 @@
 # Website Sistem Data Pegawai
 
-Demo : https://avallion.000webhostapp.com/pegawai
+Demo : https://avallion.000webhostapp.com/
 
 ### Resources
 -  Codeigniter 3
