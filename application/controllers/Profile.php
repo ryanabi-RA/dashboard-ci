@@ -13,6 +13,6 @@ class Profile extends CI_Controller {
 		$this->load->view('templates/Sidebar');
 		$this->load->view('templates/Navbar', $data);
 		$this->load->view('pages/Profile');
-		// $this->load->view('templates/Footer');
+		$this->load->view('templates/Footer');
 	}
 }

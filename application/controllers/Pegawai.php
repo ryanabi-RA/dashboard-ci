@@ -13,6 +13,7 @@ class Pegawai extends CI_Controller
 		$this->load->library('pagination');
 
 		$config['base_url'] = 'http://localhost/dashboard-ci-tailwind/pegawai/index';
+		// $config['base_url'] = 'https://avallion.000webhostapp.com/pegawai/index';
 		$config['total_rows'] = $this->db->get('pegawai')->num_rows();
 		$config['per_page'] = 6;
 
@@ -163,7 +164,7 @@ class Pegawai extends CI_Controller
 
 		$this->db->where($where);
 		$this->db->update('pegawai', $data);
-		// $this->m_pegawai->update_data($where, $data, 'pegawai');
+		// $this->M_pegawai->update_data($where, $data, 'pegawai');
 		redirect('pegawai');
 	}
 
@@ -181,7 +182,9 @@ class Pegawai extends CI_Controller
 		$this->load->library('pagination');
 
 		$keyword = $this->input->post('keyword');
-		$data['pegawai'] = $this->m_pegawai->get_keyword($keyword);
+		$data['pegawai'] = $this->M_pegawai->get_keyword($keyword);
+		$config['base_url'] = 'http://localhost/dashboard-ci-tailwind/pegawai/index';
+		// $config['base_url'] = 'https://avallion.000webhostapp.com/pegawai/search/index';
 		$data['start'] = $this->uri->segment(4);
 
 		$data['pagination'] = $this->pagination->create_links();
@@ -189,7 +192,7 @@ class Pegawai extends CI_Controller
 		$this->load->view('templates/Header', $data);
 		$this->load->view('templates/Sidebar');
 		$this->load->view('templates/Navbar', $data);
-		$this->load->view('pages/pegawai', $data);
+		$this->load->view('pages/Search', $data);
 		$this->load->view('templates/Footer');
 	}
 

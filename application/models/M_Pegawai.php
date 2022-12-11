@@ -1,6 +1,6 @@
 <?php
 
-class M_Pegawai extends CI_Model
+class M_pegawai extends CI_Model
 {
     public function get_keyword($keyword)
     {
@@ -11,6 +11,7 @@ class M_Pegawai extends CI_Model
         $this->db->or_like('tgl_lahir', $keyword);
         $this->db->or_like('alamat', $keyword);
         $this->db->or_like('no_telp', $keyword);
+        $this->db->order_by('nama');
         return $this->db->get()->result();
     }
 }

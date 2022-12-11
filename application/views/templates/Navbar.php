@@ -8,7 +8,7 @@
             <?= form_open('pegawai/search'); ?>
             <div class="flex" id="search">
                 <input type="text" name="keyword" id="keyword" placeholder="cari..." class="mx-4 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                <button type="submit" class="">
+                <button type="submit" id="toggleSearch" name="toggleSearch" aria-label="toggleSearch">
                     <i class="-ml-20 text-[20px] text-gray-300 fa-solid fa-search"></i>
                 </button>
             </div>
@@ -27,8 +27,8 @@
         </a> -->
 
 
-        <button id="dropdownUser" data-dropdown-toggle="dropdownMenuUser" class="flex items-center focus:outline-none" type="button">
-                <img src="<?php echo base_url('assets/foto/default.png') ?>" class="w-[48px] h-[48px] rounded-[24px]" alt="User Image">
+        <button id="dropdownUser" data-dropdown-toggle="dropdownMenuUser" class="mr-0 md:mr-2 w-[48px] h-[48px] rounded-[24px] overflow-hidden focus:outline-none" type="button">
+                <img src="<?php echo base_url('assets/foto/default.png') ?>" class="" alt="User Image">
         </button>
         <!-- Dropdown menu -->
         <div id="dropdownMenuUser" class="hidden z-10 p-2 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
