@@ -12,5 +12,6 @@ Resources
 -  Flowbite
 -  Fontawesome icons
 
+## Screenshots
 
-![Alt text](https://github.com/ryanabi-RA/dashboard-ci-tailwind/blob/master/Dashboard.png "Title")
+![Home Page](./Data Pegawai.png "Home Page")
