@@ -98,6 +98,21 @@ class Pegawai extends CI_Controller
 		);
 
 		$this->db->insert('pegawai', $data);
+		$this->session->set_flashdata('massage','<div id="alert" class="flex py-3 px-4 mb-4 bg-green-500 rounded-lg dark:bg-green-600" role="alert">
+				<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-white dark:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+				</svg>
+				<span class="sr-only">Info</span>
+				<div class="ml-3 text-sm font-medium">
+					<p class="text-gray-100 font-medium"><span class="text-[20px] text-white font-extrabold">Success!</span>, Data Berhasil di Tambah</p>
+				</div>
+				<button type="button" class="ml-auto -mx-1.5 -my-1.5 text-xl rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex h-8 w-8 dark:text-white dark:bg-green-700 dark:hover:bg-green-900" data-dismiss-target="#alert" aria-label="Close">
+					<span class="sr-only">Close</span>
+					<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>');
 		redirect('pegawai');
 	}
 
@@ -143,35 +158,75 @@ class Pegawai extends CI_Controller
 
 			$this->load->library('upload');
 			$this->upload->initialize($config);
-			if (!$this->upload->do_upload('foto')) {
-				echo "Upload Gagal";
-				die;
-			} else {
+			if ($this->upload->do_upload('foto')) {
 				$foto = $this->upload->data('file_name');
 			}
 		}
 
-		$data = array(
-			'nama'          => $nama,
-			'nip'           => $nip,
-			'tgl_lahir'     => $tgl_lahir,
-			'alamat'        => $alamat,
-			'no_telp'       => $no_telp,
-			'foto'       => $foto,
-		);
+		if (!$foto) {
+			$data = array(
+				'nama'          => $nama,
+				'nip'           => $nip,
+				'tgl_lahir'     => $tgl_lahir,
+				'alamat'        => $alamat,
+				'no_telp'       => $no_telp,
+				'foto'       => $foto,
+			);
+		} else {
+			$data = array(
+				'nama'          => $nama,
+				'nip'           => $nip,
+				'tgl_lahir'     => $tgl_lahir,
+				'alamat'        => $alamat,
+				'no_telp'       => $no_telp,
+			);
+		}
 
 		$where = array('id_pegawai' => $id_pegawai);
 
 		$this->db->where($where);
 		$this->db->update('pegawai', $data);
-		// $this->M_pegawai->update_data($where, $data, 'pegawai');
+		$this->session->set_flashdata('massage','<div id="alert" class="flex py-3 px-4 mb-4 bg-yellow-500 rounded-lg dark:bg-yellow-600" role="alert">
+				<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-white dark:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+				</svg>
+				<span class="sr-only">Info</span>
+				<div class="ml-3 text-sm font-medium">
+					<p class="text-gray-100 font-medium"><span class="text-[20px] text-white font-extrabold">Warning!</span>, Data Berhasil di Edit</p>
+				</div>
+				<button type="button" class="ml-auto -mx-1.5 -my-1.5 text-xl rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex h-8 w-8 dark:text-white dark:bg-yellow-700 dark:hover:bg-yellow-900" data-dismiss-target="#alert" aria-label="Close">
+					<span class="sr-only">Close</span>
+					<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>');
 		redirect('pegawai');
+
 	}
 
 	public function hapus($id_pegawai)
 	{
 		$this->db->where(array('id_pegawai' => $id_pegawai));
 		$this->db->delete('pegawai');
+		
+		$this->session->set_flashdata(
+			'massage',
+			'<div id="alert" class="flex py-3 px-4 mb-4 bg-red-500 rounded-lg dark:bg-red-600" role="alert">
+				<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-white dark:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+				</svg>
+				<span class="sr-only">Info</span>
+				<div class="ml-3 text-sm font-medium">
+					<p class="text-gray-100 font-medium"><span class="text-[20px] text-white font-extrabold">Warning!</span>, Data Berhasil di Hapus</p>
+				</div>
+				<button type="button" class="ml-auto -mx-1.5 -my-1.5 text-xl rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex h-8 w-8 dark:text-white dark:bg-red-700 dark:hover:bg-red-900" data-dismiss-target="#alert" aria-label="Close">
+					<span class="sr-only">Close</span>
+					<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>');
 		redirect('pegawai');
 	}
 

@@ -1,7 +1,7 @@
 <!-- Content -->
 <div class="grow m-0 py-4 w-full flex flex-wrap" id="content">
     <div class="p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md">
-        <?php echo form_open_multipart('pegawai/update/'); ?>
+        <?php echo form_open_multipart('pegawai/update'); ?>
         <div class="flex flex-col lg:flex-row max-w-4xl items-center lg:items-start">
             <img src="<?= base_url('assets/foto/') . $pegawai->foto; ?>" alt="" class="mb-6 lg:mb-0 w-fit sm:max-w-sm border-2 border-gray-600 rounded-xl bg-cover">
             <!-- </div> -->
@@ -46,7 +46,7 @@
                     <td class="text-md font-medium text-black dark:text-gray-300">Foto</td>
                     <td class="text-md font-medium text-black dark:text-gray-500 px-4">:</td>
                     <td class="text-md font-medium text-black">
-                        <input type="file" name="foto" id="foto" class="w-full bg-gray-50 dark:bg-transparent border border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input type="file" name="foto" id="foto" class="w-full bg-gray-50 dark:bg-transparent border border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                     </td>
                 </tr>
             </table>

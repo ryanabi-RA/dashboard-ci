@@ -26,29 +26,29 @@
     </a>
     <?php $x = $this->uri->segment(1); ?>
     <!-- dashboard menu -->
-    <ul class="m-2 flex justify-center md:justify-start flex-col">
+    <ul class="m-2 flex justify-center md:justify-start flex-col text-gray-500 dark:text-gray-400 font-[24px]">
         <li class="my-1 rounded-lg hover:rounded-lg hover:bg-gray-200 dark:hover:bg-gray-900 <?php if($x == "") { echo $bg = "bg-gray-900"; }?>">
             <a href="<?= base_url(''); ?>" class="my-6 md:my-1 p-0 md:p-2 px-2 md:px-5 flex items-center" aria-label="Anchor to Dashboard">
-                <i class="text-gray-500 fa-solid fa-home fa-lg w-5 <?php if($x == "") { echo $icon = "text-white font-bold"; }?>"></i>
-                <p class="mx-2 hidden md:grid text-gray-500 font-medium <?php if($x == "") { echo $text = "text-white font-bold"; }?>">Dashboard</p>
+                <i class="fa-solid fa-home fa-lg w-5 <?php if($x == "") { echo $icon = "text-white font-bold"; }?>"></i>
+                <p class="mx-2 hidden md:grid font-medium <?php if($x == "") { echo $text = "text-white font-bold"; }?>">Dashboard</p>
             </a>
         </li>
         <li class="my-1 rounded-lg hover:rounded-lg hover:bg-gray-200 dark:hover:bg-gray-900 <?php if($x == "pegawai") { echo $bg = "bg-gray-900"; }?>">
             <a href="<?= base_url('pegawai'); ?>" class="my-6 md:my-1 p-0 md:p-2 px-2 md:px-5 flex items-center" aria-label="Anchor to Pegawai">
-                <i class="text-gray-500 fa-solid fa-user fa-lg w-5 <?php if($x == "pegawai") { echo $icon = "text-white font-bold"; }?>"></i>
-                <p class="mx-2 hidden md:grid text-gray-500 font-medium <?php if($x == "pegawai") { echo $text = "text-white font-bold"; }?>">Pegawai</p>
+                <i class="fa-solid fa-user fa-lg w-5 <?php if($x == "pegawai") { echo $icon = "text-white font-bold"; }?>"></i>
+                <p class="mx-2 hidden md:grid font-medium <?php if($x == "pegawai") { echo $text = "text-white font-bold"; }?>">Pegawai</p>
             </a>
         </li>
         <li class="my-1 rounded-lg hover:rounded-lg hover:bg-gray-200 dark:hover:bg-gray-900">
             <a href="<?= base_url('lorem'); ?>" class="my-6 md:my-1 p-0 md:p-2 px-2 md:px-5 flex items-center" aria-label="Anchor to lorem">
-                <i class="text-gray-500 fa-solid fa-gear fa-lg w-5 "></i>
-                <p class="mx-2 hidden md:grid text-gray-500 font-medium">Lorem</p>
+                <i class="fa-solid fa-gear fa-lg w-5 "></i>
+                <p class="mx-2 hidden md:grid font-medium">Lorem</p>
             </a>
         </li>
         <li class="my-1 rounded-lg hover:rounded-lg hover:bg-gray-200 dark:hover:bg-gray-900">
             <a href="<?= base_url('lorem'); ?>" class="my-6 md:my-1 p-0 md:p-2 px-2 md:px-5 flex items-center" aria-label="Anchor to lorem">
-                <i class="text-gray-500 fa-solid fa-gear fa-lg w-5 "></i>
-                <p class="mx-2 hidden md:grid text-gray-500 font-medium">Lorem</p>
+                <i class="fa-solid fa-gear fa-lg w-5 "></i>
+                <p class="mx-2 hidden md:grid font-medium">Lorem</p>
             </a>
         </li>
     </ul>

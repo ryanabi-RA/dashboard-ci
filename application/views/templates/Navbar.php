@@ -14,19 +14,6 @@
             </div>
             <?= form_close(); ?>
         </div>
-
-        <!-- <div class="w-10 h-10 border border-gray-700 dark:border-gray-400 rounded-full flex justify-center items-center">
-            <i class="dark:text-slate-200 fa-solid fa-user fa-xl"></i>
-        </div> -->
-
-
-        <!-- <a href="<?= base_url('profile') ?>">
-            <div class="flex items-center" id="user-panel">
-                <img src="<?php echo base_url('assets/foto/default.png') ?>" class="w-[48px] h-[48px] rounded-[24px]" alt="User Image">
-            </div>
-        </a> -->
-
-
         <button id="dropdownUser" data-dropdown-toggle="dropdownMenuUser" class="mr-0 md:mr-2 w-[48px] h-[48px] rounded-[24px] overflow-hidden focus:outline-none" type="button">
                 <img src="<?php echo base_url('assets/foto/default.png') ?>" class="" alt="User Image">
         </button>

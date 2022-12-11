@@ -1,6 +1,6 @@
 <!-- Pegawai Page -->
 <div class="grow m-0 py-2 md:py-4 w-full" id="content">
-
+    <?= $this->session->flashdata('massage'); ?>  
     <div class="container-content">
         <!-- Modal toggle -->
         <div class="container-button flex">
@@ -9,12 +9,11 @@
             </button>
             <a href="<?= base_url('pegawai/print'); ?>">
                 <button class=" mx-2 block text-white bg-red-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="authentication-modal">
-                    <!-- <i class="fa-solid mx-2 fa-print">Print</i> -->
                     print
                 </button>
             </a>
-            <button id="dropdownExport" data-dropdown-toggle="dropdownMenuExport" class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800" type="button">
-                Export 
+            <button id="dropdownExport" data-dropdown-toggle="dropdownMenuExport" class="text-white bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-yellow-500 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800" type="button">
+                Export
                 <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -30,8 +29,6 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
 
         <!-- Main modal -->
