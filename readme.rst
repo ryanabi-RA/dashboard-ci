@@ -14,4 +14,4 @@ Resources
 
 ## Screenshots
 
-![Home Page](./Data Pegawai.png "Home Page")
+![Home Page](./Dashboard.png "Home Page")
