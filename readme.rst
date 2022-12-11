@@ -2,10 +2,9 @@
 Website Sistem Data Pegawai
 ###################
 
-![Dashboard](Dashboard.png?raw=true)
+![Dashboard](/Dashboard.png?raw=true "Page Dashboard")
 
-Tampilan Data Pegawai
-![Data Pegawai](Data%20Pegawai.png?raw=true)
+![Data Pegawai](Data%20Pegawai.png?raw=true "Page Data Pegawai")
 
 Demo : https://avallion.000webhostapp.com/pegawai
 
