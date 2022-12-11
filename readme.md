@@ -1,12 +1,6 @@
-###################
-Website Sistem Data Pegawai
-###################
+# Website Sistem Data Pegawai
 
-Demo : https://avallion.000webhostapp.com/pegawai
-
-*********
-Resources
-*********
+* Resources
 -  Codeigniter 3
 -  TailwindCSS
 -  Flowbite
@@ -16,3 +10,7 @@ Resources
 
 ![Dashboard Page](./Dashboard.png "Dashboard Page")
 ![Data Pegawai Page](./Data Pegawai.png "Data Pegawai Page")
+
+Demo : https://avallion.000webhostapp.com/pegawai
+
+
