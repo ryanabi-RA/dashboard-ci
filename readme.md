@@ -1,6 +1,6 @@
 # Website Sistem Data Pegawai
 
-* Resources
+### Resources
 -  Codeigniter 3
 -  TailwindCSS
 -  Flowbite
