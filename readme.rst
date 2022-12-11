@@ -11,8 +11,7 @@ Demo : https://avallion.000webhostapp.com/pegawai
 *********
 Resources
 *********
-
--  `codeigniter`_
--  `TailwindCSS`_
--  `Flowbite`_
--  `fontawesome icons`_
+-  Codeigniter 3
+-  TailwindCSS
+-  Flowbite
+-  Fontawesome icons
