@@ -3,10 +3,10 @@ Website Sistem Data Pegawai
 ###################
 
 Tampilan Dashboard
-![Dashboard](https://raw.githubusercontent.com/ryanabi-RA/dashboard-ci-tailwind/master/Dashboard.png?raw=true)
+![Dashboard](./Dashboard.png?raw=true)
 
 Tampilan Data Pegawai
-![Data Pegawai](https://github.com/ryanabi-RA/dashboard-ci-tailwind/blob/master/Data%20Pegawai.png?raw=true)
+![Data Pegawai](./Data%20Pegawai.png?raw=true)
 
 Demo : https://avallion.000webhostapp.com/pegawai
 
