@@ -2,7 +2,6 @@
 Website Sistem Data Pegawai
 ###################
 
-Tampilan Dashboard
 ![Dashboard](Dashboard.png?raw=true)
 
 Tampilan Data Pegawai
