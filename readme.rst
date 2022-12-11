@@ -2,7 +2,7 @@
 Website Sistem Data Pegawai
 ###################
 
-![Dashboard](/Dashboard.png?raw=true "Page Dashboard")
+![Dashboard](/Dashboard.png "Page Dashboard")
 
 ![Data Pegawai](Data%20Pegawai.png?raw=true "Page Data Pegawai")
 
