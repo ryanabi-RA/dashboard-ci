@@ -2,9 +2,16 @@
 Website Sistem Data Pegawai
 ###################
 
-![Dashboard](/Dashboard.png "Page Dashboard")
+#
+Page Dashbord
+#
+<img src="https://github.com/ryanabi-RA/dashboard-ci-tailwind/blob/master/Dashboard.png" alt="Dashboard">
 
-![Data Pegawai](Data%20Pegawai.png?raw=true "Page Data Pegawai")
+
+#
+Page Data Pegawai
+#
+<img src="https://github.com/ryanabi-RA/dashboard-ci-tailwind/blob/master/Data%20Pegawai.png" alt="Data Pegawai">
 
 Demo : https://avallion.000webhostapp.com/pegawai
 
