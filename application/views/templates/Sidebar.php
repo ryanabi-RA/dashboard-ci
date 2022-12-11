@@ -11,7 +11,7 @@
 
             </div>
             <div class="title hidden md:grid mx-4" id="title">
-                <h1 class="text-2xl hidden md:grid font-bold">Jaguar</h1>
+                <h1 class="text-2xl hidden md:grid font-bold">Avallion</h1>
             </div>
         </section>
     </a>
