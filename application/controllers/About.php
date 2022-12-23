@@ -10,7 +10,7 @@ class About extends CI_Controller {
 		// $data['jumlahPegawai'] = $this->db->get('pegawai')->num_rows();
 
 		$this->load->view('templates/Header', $data);
-		// $this->load->view('templates/Sidebar');
+		$this->load->view('templates/Sidebar');
 		// $this->load->view('templates/Navbar', $data);
 		$this->load->view('pages/About');
 		// $this->load->view('templates/Footer');
