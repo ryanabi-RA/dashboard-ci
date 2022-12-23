@@ -159,7 +159,7 @@ class Pegawai extends CI_Controller
 			}
 		}
 
-		if ($foto != null) {
+		if (!$foto) {
 			$data = array(
 				'nama'          => $nama,
 				'nip'           => $nip,
