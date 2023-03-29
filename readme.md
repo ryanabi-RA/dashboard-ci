@@ -12,7 +12,7 @@ Demo : https://avallion.000webhostapp.com/
 
 1. clone project in directoy htdocs xampp
 ```
-git clone https://github.com/ryanabi-RA/Project-clone-app-KAI.git
+git clone https://github.com/ryanabi-RA/dashboard-pegawai.git
 ```
 2. running apache and mysql in xampp or etc.
 
